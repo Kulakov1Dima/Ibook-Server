@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # -*- encoding: utf-8 -*-
 
-from ibook import application
+import uvicorn as uvicorn
+from ibook import app
 
 if __name__ == "__main__":
-   application.run()
+   uvicorn.run("ibook:app", host="localhost", port=8010, reload=True)
