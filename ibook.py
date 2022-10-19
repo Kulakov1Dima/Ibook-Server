@@ -1,9 +1,10 @@
-from flask import Flask
-application = Flask(__name__)
+import uvicorn as uvicorn
+from fastapi import FastAPI
+application = FastAPI()
 
-@application.route("/")
-def hello():
-   return "<h1>ibook server ready 19.10.22</h1>"
+@application.get("/")
+def root():
+   return {"message": "Ibook Server are working for you ;)"}
 
 if __name__ == "__main__":
-   application.run(host='0.0.0.0')
+   uvicorn.run("ibook:application", port=9000, reload=True)
