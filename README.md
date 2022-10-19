@@ -1,5 +1,5 @@
 # Ibook Сервер 3.0
-Сервер для проекта: [ibook](https://github.com/interpreter-It/IBook-Social-Network)
+Сервер для проекта: [ibook](https://github.com/interpreter-It/IBook-Social-Network).
 Обеспечивает пересылку, отправку и хранение сообщений.
 Выполняет авторизацию пользователей мессенджера по токену
 # Тестированаие
