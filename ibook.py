@@ -10,7 +10,7 @@ def hello():
 @application.route("/auth", methods=["POST"])
 @application.route("/authorization",methods=["POST"])
 def auth():
-   return authorization(request.get_data)
+   return authorization(request.get_data())
 
 if __name__ == "__main__":
    application.run()
