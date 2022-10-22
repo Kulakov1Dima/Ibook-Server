@@ -1,0 +1,2 @@
+def checkUth(user):
+    return

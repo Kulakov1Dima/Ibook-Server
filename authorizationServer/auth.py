@@ -1,2 +1,2 @@
-def auth():
-    return "hello"
+def auth(request):
+    return request

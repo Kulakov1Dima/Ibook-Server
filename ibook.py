@@ -1,6 +1,6 @@
 import codecs
 from authorizationServer.auth import auth as authorization 
-from flask import Flask
+from flask import Flask, request
 application = Flask(__name__)
 
 @application.route("/")
@@ -10,7 +10,7 @@ def hello():
 @application.route("/auth", methods=["POST"])
 @application.route("/authorization",methods=["POST"])
 def auth():
-   return authorization()
+   return authorization(request.get_json())
 
 if __name__ == "__main__":
    application.run()
