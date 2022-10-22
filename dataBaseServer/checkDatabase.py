@@ -1,2 +1,2 @@
-def checkUth(user):
+def checkAuth(user):
     return
