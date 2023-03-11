@@ -9,4 +9,4 @@ async def root():
     return {"message": "Hello World"}
 
 if __name__ == "__main__":
-   uvicorn.run("ibook:app", host="localhost", port=9000, reload=True)
+   uvicorn.run("ibook:app", host="134.0.115.2", port=9000, reload=True)
