@@ -6,8 +6,8 @@ from checkAuthorization import checking_auth, Сheck_Auth
 
 app = FastAPI()
 
-@app.get("/", response_class=HTMLResponse)
-async def root():
+@app.get("/", response_class=HTMLResponse, tags=["Home"])
+async def home():
    with open('Hello.html') as html_file:
         data = html_file.read()
    return HTMLResponse(content = data, status_code = 200)
