@@ -1,5 +1,7 @@
 from pydantic import BaseModel
 
-class Auth(BaseModel):
-    name: str
-    description: str | None = None
+class Сheck_Auth(BaseModel):
+    token: str
+
+def checking_auth(token):
+    return True

@@ -2,7 +2,7 @@
 import uvicorn as uvicorn
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-from checkAuthorization import Auth
+from checkAuthorization import checking_auth, Сheck_Auth
 
 app = FastAPI()
 
@@ -12,9 +12,9 @@ async def root():
         data = html_file.read()
    return HTMLResponse(content = data, status_code = 200)
 
-@app.post("/auth/",  tags=["Authorization|Registration"])
-async def create_auth(auth: Auth):
-    return auth.description
+@app.post("/verification/",  tags=["Authorization|Registration"])
+async def authorization_verification(auth: Сheck_Auth):
+    return checking_auth(auth.token)
 
 if __name__ == "__main__":
    uvicorn.run("ibook:app", host = "134.0.115.2", port = 9000, reload = True)
