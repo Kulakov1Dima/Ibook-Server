@@ -17,4 +17,6 @@ async def authorization_verification(auth: Сheck_Auth):
     return checking_auth(auth.token)
 
 if __name__ == "__main__":
-   uvicorn.run("ibook:app", host = "134.0.115.2", port = 9000, reload = True)
+   uvicorn.run("ibook:app", host = "134.0.115.2", port = 9000, reload = True,
+                ssl_keyfile="./www.ibook.agency.key", 
+                ssl_certfile="./certificate.pem")
