@@ -12,6 +12,10 @@ async def home():
         data = html_file.read()
    return HTMLResponse(content = data, status_code = 200)
 
+@app.get("/version/",  tags=["Home"])
+async def update_app():
+    return "2.7.0"
+
 @app.post("/verification/",  tags=["Authorization|Registration"])
 async def authorization_verification(auth: Сheck_Auth):
     return checking_auth(auth.token)
