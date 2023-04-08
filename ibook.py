@@ -17,7 +17,7 @@ async def home():
 
 @app.get("/version/",  tags=["Home"])
 async def update_app():
-    return "2.7.0"
+    return "2.6.9"
 
 @app.get("/up/",  tags=["Home"])
 async def download_app():
