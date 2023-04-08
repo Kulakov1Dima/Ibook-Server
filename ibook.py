@@ -1,10 +1,13 @@
 
 import uvicorn as uvicorn
 from fastapi import FastAPI
+from fastapi.responses import FileResponse
 from fastapi.responses import HTMLResponse
 from checkAuthorization import checking_auth, Сheck_Auth
 
 app = FastAPI()
+
+file_path = "ibook.apk"
 
 @app.get("/", response_class=HTMLResponse, tags=["Home"])
 async def home():
@@ -13,8 +16,12 @@ async def home():
    return HTMLResponse(content = data, status_code = 200)
 
 @app.get("/version/",  tags=["Home"])
-async def update_app():
+async def download_app():
     return "2.7.0"
+
+@app.get("/up/",  tags=["Home"])
+async def up_app():
+    return FileResponse(path=file_path, filename=file_path, media_type='application/octet-stream')
 
 @app.post("/verification/",  tags=["Authorization|Registration"])
 async def authorization_verification(auth: Сheck_Auth):
