@@ -16,11 +16,11 @@ async def home():
    return HTMLResponse(content = data, status_code = 200)
 
 @app.get("/version/",  tags=["Home"])
-async def download_app():
+async def update_app():
     return "2.7.0"
 
 @app.get("/up/",  tags=["Home"])
-async def up_app():
+async def download_app():
     return FileResponse(path=file_path, filename=file_path, media_type='application/octet-stream')
 
 @app.post("/verification/",  tags=["Authorization|Registration"])
