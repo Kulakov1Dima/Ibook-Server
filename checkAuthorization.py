@@ -1,7 +1,10 @@
+import sqlite3
 from pydantic import BaseModel
 
 class Сheck_Auth(BaseModel):
-    token: str
+    email: str
 
-def checking_auth(token):
+def checking_auth(email, path):
+    con = sqlite3.connect(path)
+    cur = con.cursor()
     return True

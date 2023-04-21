@@ -8,6 +8,7 @@ from checkAuthorization import checking_auth, Сheck_Auth
 app = FastAPI()
 
 file_path = "ibook.apk"
+data_base = "users.db"
 
 @app.get("/", response_class=HTMLResponse, tags=["Home"])
 async def home():
@@ -25,7 +26,12 @@ async def download_app():
 
 @app.post("/verification/",  tags=["Authorization|Registration"])
 async def authorization_verification(auth: Сheck_Auth):
-    return checking_auth(auth.token)
+    return checking_auth(auth.email, data_base)
+
+@app.post("/registration/", tags=["Authorization|Registration"])
+async def registration():
+    return "hello"
 
 if __name__ == "__main__":
-   uvicorn.run("ibook:app", host = "134.0.115.2", port = 80, reload = True)
+   uvicorn.run("ibook:app", host = "localhost", port = 80, reload = True)
+   #host = "134.0.115.2"
