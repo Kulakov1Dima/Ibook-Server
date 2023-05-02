@@ -12,7 +12,8 @@ class Return_data_verification(BaseModel):
     age: int
     status: str
 
-def checking_auth(email, path):
+def checking_auth(email, path):                             # Будущая проверка человека в бд
     con = sqlite3.connect(path)
     cur = con.cursor()
     return Return_data_verification(surname ="null", name = "null", patronymic = "null", nickname = "null", age = 0, status = "DELITED")
+    # Отправка данных приложению для отображения их в профиле
