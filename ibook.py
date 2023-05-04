@@ -32,5 +32,5 @@ async def registration():
     return "hello"                                                             # Будущая регистрация и занос данных в бд
 
 if __name__ == "__main__":
-   #uvicorn.run("ibook:app", host = "134.0.115.2", port = 80, reload = True)
-   uvicorn.run("ibook:app", host = "127.0.0.1", port = 80, reload = True)      # Запуск сервера для локальной машины
+   uvicorn.run("ibook:app", host = "134.0.115.2", port = 80, reload = True)
+   #uvicorn.run("ibook:app", host = "127.0.0.1", port = 80, reload = True)      # Запуск сервера для локальной машины
