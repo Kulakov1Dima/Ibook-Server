@@ -20,4 +20,4 @@ async def update_app():
 
 if __name__ == "__main__":
    #uvicorn.run("ibook:app", host = "127.0.0.1", port = 80, reload = True)      # Запуск сервера для локальной машины
-    uvicorn.run("ibook:app", host = "192.168.1.146",port = 80, reload = True)
+    uvicorn.run("ibook:app", host = "192.168.1.146",port = 9000, reload = True)
