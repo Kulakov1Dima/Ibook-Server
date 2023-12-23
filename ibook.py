@@ -19,4 +19,5 @@ async def update_app():
     return "2.6.9"                                                             # Текущая актуальная версия приложения до которого будут обновляться старые
 
 if __name__ == "__main__":
-   uvicorn.run("ibook:app", host = "127.0.0.1", port = 80, reload = True)      # Запуск сервера для локальной машины
+   #uvicorn.run("ibook:app", host = "127.0.0.1", port = 80, reload = True)      # Запуск сервера для локальной машины
+    uvicorn.run("ibook:app", host = "192.168.1.146",port = 80, reload = True)
