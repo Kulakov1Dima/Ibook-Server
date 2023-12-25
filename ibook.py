@@ -5,9 +5,6 @@ from fastapi.responses import FileResponse, HTMLResponse
 
 app = FastAPI()
 
-file_path = "ibook.apk"
-data_base = "../users.db"
-
 @app.get("/", response_class=HTMLResponse, tags=["Home"])
 async def home():  # HTML превьюшка
     html_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Hello.html')
@@ -20,4 +17,5 @@ async def update_app():
     return "2.6.9"  # Текущая актуальная версия приложения до которого будут обновляться старые
 
 if __name__ == "__main__":
-   uvicorn.run("ibook:app", host="192.168.1.146", port=9000, reload=True)
+   uvicorn.run("ibook:app", host="192.168.1.146", port=9000, reload=True, ssl_keyfile="ibook-daa2557bc9hb3.keenetic.pro-privateKey.key", ssl_certfile="ibook-daa2557bc9hb3.keenetic.pro.crt")
+   #uvicorn.run("ibook:app", host="localhost", port=9000, reload=True, ssl_keyfile="ibook-daa2557bc9hb3.keenetic.pro-privateKey.key", ssl_certfile="ibook-daa2557bc9hb3.keenetic.pro.crt")
