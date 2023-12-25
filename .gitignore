@@ -3,5 +3,4 @@
 *.db
 ibookenv
 ibook
-*.key
 *.pem
