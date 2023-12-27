@@ -6,7 +6,7 @@ import uvicorn
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')), name="static")
 
 @app.get("/", response_class=HTMLResponse, tags=["Home"], summary="Главная страница сервера", description="Страница авторицации и администратирования", responses={
     200: {"description": "HTML страница успешно открыта"},
