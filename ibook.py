@@ -6,8 +6,8 @@ from fastapi.responses import FileResponse, HTMLResponse
 app = FastAPI()
 
 @app.get("/", response_class=HTMLResponse, tags=["Home"])
-async def home():  # HTML превьюшка
-    html_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Hello.html')
+async def home():
+    html_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html_files\main_page\Hello.html')
     with open(html_file_path) as html_file:
         data = html_file.read()
     return HTMLResponse(content=data, status_code=200)
