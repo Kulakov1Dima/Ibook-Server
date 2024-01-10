@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ibook Server</title>
+        <script>
+            window.onload = function() {
+                checkOrientation();
+            };
+
+            window.onresize = function() {
+                checkOrientation();
+            };
+
+            function checkOrientation() {
+                if (window.innerHeight < window.innerWidth) {
+                    window.location.href = '../';
+                }
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -3,19 +3,37 @@
     <head>
         <title>Ibook Server</title>
         <link rel="stylesheet" type="text/css" href="/static/styles.css">
+        <script>
+            window.onload = function() {
+                checkOrientation();
+            };
+
+            window.onresize = function() {
+                checkOrientation();
+            };
+
+            function checkOrientation() {
+                if (window.innerHeight > window.innerWidth) {
+                    window.location.href = '/static/PortraitHello.html';// Переход на страницу для портретной ориентации
+                }
+            }
+        </script>
     </head>
     <body>
-        <ul>
-            <li><a class="active" href="docs">Api Ibook</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="https://github.com/Kulakov1Dima/Ibook-Server">github</a></li>
-            <li><a href="up">Download android app</a></li>
-        </ul>
-        <div>
-            <h1>Ibook server is working!</h1>
-            <script type="text/javascript">
-                document.write(Date());
-            </script>   
+        <div class="content">
+            <h1>Ibook Workspace</h1>
+            <p2>Рабочее пространство для любой работы!</p2><h1></h1>
+            <button class="login-button">Вход</button>
+        </div>
+        <div class="content2">
+            <ul>
+                <p3><a class="active" href="docs">Api ibook</a></p3>
+                <p3><a href="https://github.com/Kulakov1Dima/Ibook-Server">Github</a></p3>
+                <p3><a href="#news">Новости</a></p3>
+            </ul>
+        </div>
+        <div class="content3">
+            <p4>Ibook 2024</p4>
         </div>
     </body>
 </html>
