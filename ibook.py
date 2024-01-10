@@ -19,7 +19,7 @@ async def home():
     return HTMLResponse(content=data, status_code=200)
 
 if __name__ == "__main__":
-   uvicorn.run("ibook:app", host="192.168.1.146", port=9000, reload=True,
+   zuvicorn.run("ibook:app", host="192.168.1.146", port=9000, reload=True,
                 ssl_keyfile=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ibook-daa2557bc9hb3.keenetic.pro-privateKey.key'),
                 ssl_certfile=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ibook-daa2557bc9hb3.keenetic.pro.crt'))
    #uvicorn.run("ibook:app", host="localhost", port=9000, reload=True, ssl_keyfile="ibook-daa2557bc9hb3.keenetic.pro-privateKey.key", ssl_certfile="ibook-daa2557bc9hb3.keenetic.pro.crt")
